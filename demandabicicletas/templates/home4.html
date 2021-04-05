@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{%block body%}
+<h2>Predicción demanda de Bicicletas Full Train</h2>
+    <body>
+        Ingresa las características y aproximaremos el número de bicicletas que requieres para prestar el servicio
+        <br>
+        <td style="text-align:center"></td><strong>Prediccion solo con datos de entrenamiento: </strong>{{prediccion}}
+        <br>
+        <td style="text-align:center"></td><strong>Prediccion con todo el dataset: </strong>{{prediccion2}}
+    </body>
+
+<br>
+<form action = "predecir_demanda" method="post">
+
+    <h3>Hora</h3>
+    <input type = "number" name = "medida1" placeholder="int" required>
+    <br>
+    <h3>Pronóstico Temperatura para </h3>
+    <input type = "number" name = "medida2" placeholder="int" required>
+    <br>
+    <h3>Sensación térmica:</h3>
+    <input type = "number" name = "medida3" placeholder="int" required>
+    <br>
+    <h3>Pronóstico de humedad relativa del aire</h3>
+    <input type = "number" name = "medida4" placeholder="int" required>
+    <br>
+    <h3>Tipo de Horario (0:Horario Valle de 24:00-06:00, 1: Horario de prestación de Servicio 07:00-23:00)</h3>
+    <input type = "number" name = "medida5" placeholder="int" required>
+    <br>
+    <h3>Promedio de venta de servicios últimos 7 registros</h3>
+    <input type = "number" name = "medida6" placeholder="int" required>
+    <br>
+    <h3>Promedio de temperatura últimos 7 registros</h3>
+    <input type = "number" name = "medida7" placeholder="int" required>
+    <br>
+    <br>
+    <button>Predecir</button>
+</form>
+{% endblock %}
